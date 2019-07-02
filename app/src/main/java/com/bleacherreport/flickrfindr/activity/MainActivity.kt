@@ -123,11 +123,16 @@ class MainActivity : AppCompatActivity() {
                     for (result in results) {
                         if (!(result.contains(","))) { // if no comma and number stated, then default number of results is 25
                             numOfResults = Constants.DEFAULT_NUMBER_OF_RESULTS
-
                         } else {
-                            numOfResults = results[0].split(",").get(1).trim().toInt()
+                            var numOfResultsText = results[0].split(",").get(1).trim()
+
+                            if (!(numOfResultsText.matches("-?\\d+(\\.\\d+)?".toRegex())))
+                                numOfResults = results[1].split(",").get(1).trim().toInt()
+                            else
+                                numOfResults = results[0].split(",").get(1).trim().toInt()
                         }
                     }
+
 
                     intent.putExtra(NUM_OF_RESULTS_STRING, numOfResults)
 
