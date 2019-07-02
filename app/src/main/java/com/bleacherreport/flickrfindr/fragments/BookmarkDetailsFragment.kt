@@ -60,7 +60,7 @@ class BookmarkDetailsFragment constructor(context: Context) : Fragment() {
         removeFromBookmarksCheckBox?.setOnCheckedChangeListener { _, _ ->
             var bookmark = Bookmark(url)
             bookmark.title = title
-            bookmark.url = url
+            bookmark.url = url.toString()
             bookmark.id = id
             DatabaseInitializer.removeBookmark(appDatabase, bookmark)
             Toast.makeText(context, "Removed from bookmarks", Toast.LENGTH_SHORT).show()
