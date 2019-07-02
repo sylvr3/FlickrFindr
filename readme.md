@@ -11,15 +11,15 @@ Features:
 
 Languages, Libraries, and Frameworks used:
 
-Kotlin
-Java
-AndroidX (Lifecycle, RecyclerView)
-Retrofit
-RxJava
-Android AppCompat/Design
-Gson
-Glide
-Room
+- Kotlin
+- Java
+- AndroidX (Lifecycle, RecyclerView)
+- Retrofit
+- RxJava
+- Android AppCompat/Design
+- Gson
+- Glide
+- Room
 
 
 Basic Instructions:
