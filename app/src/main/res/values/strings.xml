@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Flickr Findr</string>
+    <string name="search">Search</string>
+    <string name="query">Enter search term here</string>
+    <string name="title">Welcome to Flickr Findr!</string>
+    <string name="number_of_results_tv">Number of Results (25 by default):</string>
+    <string name="default_number_of_results">25</string>
+    <string name="back">Back</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="view_bookmarks">View Bookmarks</string>
+    <string name="add_bookmark">Add Bookmark</string>
+    <string name="remove_bookmark">Remove From Bookmarks</string>
+    <string name="empty">No photos found!</string>
+    <string name="speechPrompt">Try saying something&#8230;</string>
+</resources>

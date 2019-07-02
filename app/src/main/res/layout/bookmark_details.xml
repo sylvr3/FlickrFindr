@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/titleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookmarkPicture"
+            android:layout_margin="4dp"/>
+
+    <TextView
+            android:id="@+id/bookmarkTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@id/bookmarkPicture"
+            android:layout_toEndOf="@id/titleLabel"
+            android:layout_margin="4dp"/>
+
+    <ImageView
+            android:id="@+id/bookmarkPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"/>
+
+    <CheckBox
+            android:id="@+id/removeFromBookmarksCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookmarkTitle"
+            android:text="@string/remove_bookmark"/>
+
+    <RelativeLayout
+            android:id="@+id/rlNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+        <Space
+                android:id="@+id/space"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"/>
+
+        <Button
+                android:id="@+id/btnBackBookmarkDetails"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/back"
+                android:layout_alignEnd="@id/space"
+                android:layout_alignParentStart="true"
+                android:background="@color/yellow"/>
+    </RelativeLayout>
+    </RelativeLayout>

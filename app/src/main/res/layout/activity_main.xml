@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:screenOrientation="portrait"
+                                             tools:context="com.bleacherreport.flickrfindr.activity.MainActivity">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:screenOrientation="portrait"
+            android:fitsSystemWindows="true"
+    >
+        <TextView
+                android:id="@+id/title"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/title"
+                android:textSize="@dimen/title_size"
+                android:textColor="@color/pink"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+        />
+
+
+        <EditText
+                android:id="@+id/etQuery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="@string/query"
+                android:inputType="text"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                app:srcCompat="@drawable/ic_action_bar_voice_search"
+                android:layout_gravity="center"
+                android:id="@+id/ivVoiceSearch"
+                android:padding="2dp"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/etQuery"/>
+
+        <TextView
+                android:id="@+id/numberOfResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/etQuery"
+                android:text="@string/number_of_results_tv"
+                android:textColor="@color/pink"
+        />
+
+        <EditText
+                android:id="@+id/numberOfResultsText"
+                android:inputType="number"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:padding="1.5dp"
+                android:text="@string/default_number_of_results"
+                android:layout_below="@+id/etQuery"
+                android:layout_toRightOf="@+id/numberOfResults"/>
+
+
+        <Button
+                android:id="@+id/btnSearch"
+                android:text="@string/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingHorizontal="5dp"
+                android:layout_below="@id/numberOfResultsText"
+                android:background="@color/colorPrimary"/>
+
+        <Button
+                android:id="@+id/btnViewBookmarks"
+                android:text="@string/view_bookmarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/numberOfResultsText"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/btnSearch"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="10dp"
+                android:background="@color/yellow"/>
+
+        <TextView
+                android:id="@+id/recentSearches"
+                android:text="@string/recent_searches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnViewBookmarks"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+
+        />
+        <Spinner
+                android:id="@+id/recentSearchesSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnViewBookmarks"
+                android:layout_alignTop="@+id/recentSearches"
+                android:layout_toRightOf="@+id/recentSearches"
+                android:textSize="10sp"/>
+        />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
