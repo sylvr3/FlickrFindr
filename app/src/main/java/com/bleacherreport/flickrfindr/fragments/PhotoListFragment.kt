@@ -67,11 +67,11 @@ class PhotoListFragment : Fragment(), PhotosAdapter.PhotoClickListener {
         viewModel.searchResponse.observe(this, Observer<PhotoSearchResult> { response ->
 
             progressBar?.visibility = View.GONE
-            if (response != null) {
-                rvPhotos?.adapter = PhotosAdapter(response.photos.photo)
-                (rvPhotos?.adapter as PhotosAdapter).itemClickListener = this
-                rvPhotos?.visibility = if (response.photos.photo.isEmpty()) View.GONE else View.VISIBLE
-            }
+                    if (response != null) {
+                        rvPhotos?.adapter = PhotosAdapter(response.photos.photo)
+                        (rvPhotos?.adapter as PhotosAdapter).itemClickListener = this
+                        rvPhotos?.visibility = if (response.photos.photo.isEmpty()) View.GONE else View.VISIBLE
+                    }
         })
     }
 
