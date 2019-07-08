@@ -78,7 +78,7 @@ class PhotoListFragment : Fragment(), PhotosAdapter.PhotoClickListener {
     override fun onItemClick(photoId: Long) {
         val viewModel = ViewModelProviders.of(this).get(PhotosViewModel::class.java)
         val photo = viewModel.getPhoto(photoId)!!
-        val url = UtilityFunctions.generatePhotoURL(photo.farm.toString(), photo.id, photo.secret, photo.server)
+        val url = UtilityFunctions.generatePhotoURL(photo.farm, photo.id, photo.secret, photo.server)
         val photoDetailsFragment = PhotoDetailsFragment(requireContext())
         if (photo.title.isNullOrEmpty())
             photo.title = ""
