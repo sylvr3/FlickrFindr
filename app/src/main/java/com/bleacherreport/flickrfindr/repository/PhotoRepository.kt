@@ -68,7 +68,7 @@ class PhotoRepository {
                             Toast.makeText(context, "No search results found", Toast.LENGTH_LONG).show()
                         for (photo in results) {
                             var photoUrl = UtilityFunctions.generatePhotoURL(
-                                photo.farm.toString(),
+                                photo.farm,
                                 photo.id,
                                 photo.secret,
                                 photo.server

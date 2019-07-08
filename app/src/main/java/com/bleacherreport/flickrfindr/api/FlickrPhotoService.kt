@@ -19,7 +19,7 @@ interface FlickrPhotoService {
     @GET("?method=flickr.photos.search&extras=url_l,url_n")
     fun getPhoto(
         @Query("api_key") api_key: String,
-        @Query("farm") farm: Int,
+        @Query("farm") farm: String,
         @Query("server") server: String,
         @Query("id") id: String,
         @Query("secret") secret: String

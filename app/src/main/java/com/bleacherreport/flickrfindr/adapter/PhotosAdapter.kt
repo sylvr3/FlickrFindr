@@ -24,7 +24,7 @@ class PhotosAdapter(private val photoList: MutableList<Photo>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val photo = photoList[position]
-        var url = UtilityFunctions.generatePhotoURL(photo.farm.toString(), photo.id, photo.secret, photo.server)
+        var url = UtilityFunctions.generatePhotoURL(photo.farm, photo.id, photo.secret, photo.server)
 
         Glide.with(holder.picture.context)
             .load(url).placeholder(R.drawable.not_available)
