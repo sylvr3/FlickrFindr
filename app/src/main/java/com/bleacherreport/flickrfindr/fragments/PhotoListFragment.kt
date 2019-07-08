@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bleacherreport.flickrfindr.R
 import com.bleacherreport.flickrfindr.activity.MainActivity
 import com.bleacherreport.flickrfindr.adapter.PhotosAdapter
+import com.bleacherreport.flickrfindr.model.PhotoSearchResponse
 import com.bleacherreport.flickrfindr.model.PhotoSearchResult
 import com.bleacherreport.flickrfindr.utils.UtilityFunctions
 import com.bleacherreport.flickrfindr.viewmodel.PhotosViewModel
@@ -64,13 +65,13 @@ class PhotoListFragment : Fragment(), PhotosAdapter.PhotoClickListener {
     }
 
     private fun observeViewModel(viewModel: PhotosViewModel) {
-        viewModel.searchResponse.observe(this, Observer<PhotoSearchResult> { response ->
+        viewModel.searchResponse.observe(this, Observer<PhotoSearchResponse> { response ->
 
             progressBar?.visibility = View.GONE
             if (response != null) {
-                rvPhotos?.adapter = PhotosAdapter(response.photos.photo)
+                rvPhotos?.adapter = PhotosAdapter(response.photos?.photo!!)
                 (rvPhotos?.adapter as PhotosAdapter).itemClickListener = this
-                rvPhotos?.visibility = if (response.photos.photo.isEmpty()) View.GONE else View.VISIBLE
+                rvPhotos?.visibility = if (response.photos?.photo.isEmpty()) View.GONE else View.VISIBLE
             }
         })
     }

@@ -6,12 +6,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bleacherreport.flickrfindr.db.AppDatabase
 import com.bleacherreport.flickrfindr.model.Photo
+import com.bleacherreport.flickrfindr.model.PhotoSearchResponse
 import com.bleacherreport.flickrfindr.model.PhotoSearchResult
 import com.bleacherreport.flickrfindr.repository.PhotoRepository
 
 
 class PhotosViewModel(application: Application) : AndroidViewModel(application) {
-    var searchResponse: LiveData<PhotoSearchResult> = MutableLiveData<PhotoSearchResult>()
+    var searchResponse: LiveData<PhotoSearchResponse> = MutableLiveData<PhotoSearchResponse>()
     private var queryString: String? = null
     private var appDatabase: AppDatabase? = null
 
@@ -25,7 +26,7 @@ class PhotosViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun getPhoto(photoId: Long): Photo? {
-        return searchResponse.value!!.photos.photo.find {
+        return searchResponse.value!!.results.find {
             it.id.toLong() == (photoId)
         }
     }
